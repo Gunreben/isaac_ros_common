@@ -18,7 +18,7 @@ ARG ROS_VERSION=humble
 
 ENV ROS_DISTRO=${ROS_VERSION}
 ENV ROS_ROOT=/opt/ros/${ROS_DISTRO}
-ENV ROS_WS=/ros_ws
+ENV ROS_WS=/workspaces/isaac_ros-dev
 ENV ROS_PYTHON_VERSION=3
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -37,7 +37,7 @@ ENV PYTHONIOENCODING=utf-8
 
 
 # set Python3 as default
-RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+#RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 
 # Set the default DDS middleware to cyclonedds
 # https://github.com/ros2/rclcpp/issues/1335
@@ -51,9 +51,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Klonen des Blickfeld-ROS-Pakets
-RUN mkdir -p ${ROS_WS}/src \
-    && cd ${ROS_WS}/src \
-    && git clone https://github.com/Gunreben/blickfeld_qb2_ros2_driver.git
+#RUN mkdir -p ${ROS_WS}/src \
+#    && cd ${ROS_WS}/src \
+#    && git clone https://github.com/Gunreben/blickfeld_qb2_ros2_driver.git
 
 # Installieren der benötigten Pakete
 RUN . ${ROS_ROOT}/setup.bash \

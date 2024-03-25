@@ -11,7 +11,7 @@ ARG ROS_VERSION=humble
 
 ENV ROS_DISTRO=${ROS_VERSION}
 ENV ROS_ROOT=/opt/ros/${ROS_DISTRO}
-ENV ROS_WS=/ros_ws
+ENV ROS_WS=/workspaces/isaac_ros-dev
 ENV ROS_PYTHON_VERSION=3
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -24,9 +24,9 @@ RUN apt-get update && apt-get install -y \
 
 
 # Klonen des ZED-ROS-Pakets
-RUN mkdir -p ${ROS_WS}/src \
-    && cd ${ROS_WS}/src \
-    && git clone  --recursive https://github.com/stereolabs/zed-ros2-wrapper.git
+#RUN mkdir -p ${ROS_WS}/src \
+#    && cd ${ROS_WS}/src \
+#    && git clone  --recursive https://github.com/stereolabs/zed-ros2-wrapper.git
 
 # Change working directory
 WORKDIR ${ROS_WS}/
