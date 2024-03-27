@@ -68,10 +68,10 @@ RUN apt-get update && \
 #    && git clone -b ros2 --recurse-submodules https://github.com/Gunreben/ouster-ros.git
     
 # Installieren der benötigten Pakete
-RUN . ${ROS_ROOT}/setup.bash \
-    && rm -rf /var/lib/apt/lists/* \
-    && cd ${ROS_WS}/ \
-    && colcon build --symlink-install --cmake-clean-first --cmake-args -DCMAKE_BUILD_TYPE=Release
+#RUN . ${ROS_ROOT}/setup.bash \
+#    && rm -rf /var/lib/apt/lists/* \
+#    && cd ${ROS_WS}/ \
+#    && colcon build --symlink-install --cmake-clean-first --cmake-args -DCMAKE_BUILD_TYPE=Release
 
 
 # commands will be appended/run by the entrypoint which sources the ROS environment

@@ -57,11 +57,11 @@ RUN apt-get update && apt-get install -y \
     libgrpc++-dev \
     protobuf-compiler-grpc \
     libtins-dev \ 
-    libprotobuf-dev \
-    && . ${ROS_ROOT}/setup.bash \
-    && rm -rf /var/lib/apt/lists/* \
-    && cd ${ROS_WS} \
-    && colcon build --symlink-install --cmake-clean-first
+    libprotobuf-dev 
+#    && . ${ROS_ROOT}/setup.bash \
+#    && rm -rf /var/lib/apt/lists/* \
+#    && cd ${ROS_WS} \
+#    && colcon build --symlink-install --cmake-clean-first
 
 
 # commands will be appended/run by the entrypoint which sources the ROS environment

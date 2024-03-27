@@ -40,15 +40,15 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
     
 
-RUN . ${ROS_ROOT}/setup.bash \
-    && apt-get update\
-    && cd ${ROS_WS} \
-    && rosdep install --from-paths src --ignore-src -r -y
+#RUN . ${ROS_ROOT}/setup.bash \
+#    && apt-get update\
+#    && cd ${ROS_WS} \
+#    && rosdep install --from-paths src --ignore-src -r -y
 
-RUN . ${ROS_ROOT}/setup.bash \
-    && rm -rf /var/lib/apt/lists/* \
-    && cd ${ROS_WS} \
-    && colcon build --symlink-install --packages-select-regex zed* --cmake-args -DCMAKE_CXX_FLAGS="-Wl,--allow-shlib-undefined"    
+#RUN . ${ROS_ROOT}/setup.bash \
+#    && rm -rf /var/lib/apt/lists/* \
+#    && cd ${ROS_WS} \
+#    && colcon build --symlink-install --packages-select-regex zed* --cmake-args -DCMAKE_CXX_FLAGS="-Wl,--allow-shlib-undefined"    
 #    && colcon build --symlink-install --packages-select-regex zed* --cmake-args -DCMAKE_LIBRARY_PATH=/usr/local/cuda/lib64/stubs -DCMAKE_CXX_FLAGS="-Wl,--allow-shlib-undefined"     
 
 # commands will be appended/run by the entrypoint which sources the ROS environment

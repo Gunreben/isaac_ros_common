@@ -65,13 +65,13 @@ RUN . ${ROS_ROOT}/setup.bash \
     libprotobuf-dev
 
 # CHECK THE SECOND SOURCE COMMAND; FEELS OFF;
-RUN . ${ROS_ROOT}/setup.bash \
-    && rm -rf /var/lib/apt/lists/* \
-    && cd ${ROS_WS} \
-    && colcon build --symlink-install --cmake-clean-first
+#RUN . ${ROS_ROOT}/setup.bash \
+#    && rm -rf /var/lib/apt/lists/* \
+#    && cd ${ROS_WS} \
+#    && colcon build --symlink-install --cmake-clean-first
 
-RUN . ${ROS_ROOT}/setup.bash \
-   && sed -i 's/"fqdn": "qb2"/"fqdn": "'"$BLICKFELD_IP"'"/' ${ROS_WS}/src/blickfeld_qb2_ros2_driver/scripts/blickfeld_qb2_ros2_driver.py
+#RUN . ${ROS_ROOT}/setup.bash \
+#   && sed -i 's/"fqdn": "qb2"/"fqdn": "'"$BLICKFELD_IP"'"/' ${ROS_WS}/src/blickfeld_qb2_ros2_driver/scripts/blickfeld_qb2_ros2_driver.py
 
 
 # commands will be appended/run by the entrypoint which sources the ROS environment
