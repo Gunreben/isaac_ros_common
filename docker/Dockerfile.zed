@@ -27,9 +27,6 @@ RUN mkdir -p /opt/zed/
 
 # The zed installation script expects to be run as non-root user and needs the USER ENV variable to be set
 ENV USER=${USERNAME}
-
-RUN usermod -a -G video $USER
-
 USER ${USERNAME}
 
 
