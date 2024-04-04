@@ -1,4 +1,4 @@
-CONFIG_IMAGE_KEY="ros2_humble.user.blickfeld.ouster.arkvision.cvcuda.zed.zed_ros"
+CONFIG_IMAGE_KEY="ros2_humble.user.blickfeld.ouster.arkvision.cvcuda.zed.zed_ros.yolov8"
 CONFIG_DOCKER_SEARCH_DIRS=(
     "workspaces/isaac_ros-dev/src/isaac_ros_common/docker"
 )
