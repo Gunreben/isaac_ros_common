@@ -11,13 +11,14 @@ FROM ${BASE_IMAGE}
 
 
 
-# yolov8 dependencies
+# detect_net dependencies
 RUN apt-get update && apt-get install -y \
-    ros-humble-isaac-ros-yolov8  \
-    ros-humble-isaac-ros-tensor-rt \
+    ros-humble-isaac-ros-detectnet  \
+    ros-humble-isaac-ros-triton \
     ros-humble-isaac-ros-dnn-image-encoder \
 && rm -rf /var/lib/apt/lists/* \
 && apt-get clean
+
 
 
 
