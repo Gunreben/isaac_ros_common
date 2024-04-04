@@ -1,0 +1,23 @@
+# Copyright (c) 2023, NVIDIA CORPORATION.  All rights reserved.
+#
+# NVIDIA CORPORATION and its licensors retain all intellectual property
+# and proprietary rights in and to this software, related documentation
+# and any modifications thereto.  Any use, reproduction, disclosure or
+# distribution of this software and related documentation without an express
+# license agreement from NVIDIA CORPORATION is strictly prohibited.
+
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+
+
+
+# zed-ros2-wrapper dependencies
+RUN apt-get update && apt-get install -y \
+    ros-humble-isaac-ros-detectnet  \
+    ros-humble-isaac-ros-triton \
+    ros-humble-isaac-ros-dnn-image-encoder \
+&& rm -rf /var/lib/apt/lists/* \
+&& apt-get clean
+
+
+
