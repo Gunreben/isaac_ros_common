@@ -192,7 +192,7 @@ for (( i=${#DOCKERFILES[@]}-1 ; i>=0 ; i-- )); do
 
     print_warning "Building ${DOCKERFILE} as image: ${IMAGE_NAME} with base: ${BASE_IMAGE_NAME}"
 
-    DOCKER_BUILDKIT=${DOCKER_BUILDKIT} docker build -f ${DOCKERFILE} \
+    DOCKER_BUILDKIT=${DOCKER_BUILDKIT} docker build  -f ${DOCKERFILE} \
      --network host \
      -t ${IMAGE_NAME} \
      ${BASE_IMAGE_ARG} \

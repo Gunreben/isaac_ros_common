@@ -2,9 +2,6 @@ ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 
 
-
 # flask dependencies
 RUN pip install flask flask-cors
-
-
 
